@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Igualdad Educativa</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary shadow-sm">
+    <div class="container">
+        <a class="navbar-brand fw-bold" href="#">Equidad Educativa</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="#marco">Introducción</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#graficas">Datos</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#soluciones">Soluciones</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#calculo">Cálculo</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<header class="hero d-flex align-items-center text-center text-white py-5 mb-5">
+    <div class="container my-5">
+        <h1 class="display-3 fw-bold mb-3">La Desigualdad en la Educación</h1>
+        <p class="lead mb-4">Una realidad que limita el futuro.</p>
+        <a href="#marco" class="btn btn-lg btn-success shadow-lg">Conocer el Problema</a>
+    </div>
+</header>
+
+<section id="marco" class="container py-5 bg-white">
+    <h2 class="text-center mb-5 display-5 fw-bold text-primary">Introducción al Problema</h2>
+    
+    <div class="row justify-content-center mb-5">
+        <div class="col-lg-10 text-center">
+            <p class="fs-5 text-secondary">
+                La educación es un derecho fundamental; sin embargo, no todas las personas tienen las mismas oportunidades
+                para acceder a una educación de calidad. La desigualdad educativa afecta a millones de niños y jóvenes,
+                limitando su desarrollo personal y el progreso social.
+            </p>
+        </div>
+    </div>
+
+    <div class="row mb-5 g-4 text-center">
+        <div class="col-md-6">
+            <div class="card p-3 h-100 border-primary border-2 shadow-sm">
+                <div class="card-body">
+                    <h3 class="card-title fw-bold text-success">Objetivo</h3>
+                    <p class="card-text">
+                        Garantizar la **igualdad de oportunidades** y reducir la desigualdad de resultados, eliminando leyes, políticas y prácticas discriminatorias.
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="card p-3 h-100 border-success border-2 shadow-sm">
+                <div class="card-body">
+                    <h3 class="card-title fw-bold text-primary">Meta</h3>
+                    <p class="card-text">
+                        Generar conciencia sobre la gravedad de la desigualdad, comprender sus manifestaciones e impactos, y reflexionar sobre la importancia de garantizar una educación equitativa y de calidad para todos.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="row g-5">
+        <div class="col-lg-6">
+            <h3 class="fw-bold mb-4 text-primary">¿Qué implica y cómo se manifiesta?</h3>
+            <ul class="list-group list-group-flush shadow-sm">
+                <li class="list-group-item fw-bold">Implica: Diferencias en el acceso, la calidad y los resultados educativos.</li>
+                <li class="list-group-item">Brechas entre zonas rurales y urbanas.</li>
+                <li class="list-group-item">Desigualdades económicas, sociales y culturales.</li>
+                <li class="list-group-item">Exclusión de grupos vulnerables (indígenas, discapacitados, migrantes).</li>
+                <li class="list-group-item fw-bold">Manifiesta en: Niños que abandonan la escuela, escuelas con recursos muy desiguales, rezago académico y discriminación.</li>
+            </ul>
+        </div>
+
+        <div class="col-lg-6">
+            <h3 class="fw-bold mb-4 text-success">Factores que alimentan la desigualdad</h3>
+            <p class="text-muted">Las principales barreras que perpetúan el problema incluyen:</p>
+            <ul class="list-group list-group-flush shadow-sm">
+                <li class="list-group-item">Pobreza económica.</li>
+                <li class="list-group-item">Ubicación geográfica.</li>
+                <li class="list-group-item">Brecha digital.</li>
+                <li class="list-group-item">Desigualdad de género.</li>
+                <li class="list-group-item">Barreras culturales y lingüísticas.</li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+<section id="graficas" class="bg-light py-5">
+    <div class="container">
+        <h2 class="text-center mb-5 display-5 fw-bold text-primary">Datos Clave sobre Desigualdad</h2>
+
+        <div class="row g-5">
+            <div class="col-md-6">
+                <div class="card shadow-lg p-3 h-100">
+                    <div class="card-body">
+                        <h3 class="card-title text-center text-secondary">Desigualdad en el acceso a recursos</h3>
+                        <p class="card-text text-center text-muted">Comparación general entre escuelas con y sin recursos suficientes.</p>
+                        <canvas id="desigualdadChart"></canvas>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <div class="card shadow-lg p-3 h-100">
+                    <div class="card-body">
+                        <h3 class="card-title text-center text-secondary">Brecha digital en la educación</h3>
+                        <p class="card-text text-center text-muted">Acceso desigual a internet y dispositivos para el aprendizaje.</p>
+                        <canvas id="brechaDigitalChart"></canvas>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="vision-general" class="py-5 bg-white">
+    <div class="container">
+        <h2 class="text-center mb-4 display-5 fw-bold text-success">Soluciones para reducir la desigualdad educativa</h2>
+        <p class="text-center lead mb-5 text-secondary">
+            Una visión integral de las medidas necesarias para lograr la equidad educativa.
+        </p>
+
+        <div class="row justify-content-center">
+            <div class="col-lg-10">
+                <div class="row row-cols-1 row-cols-md-2 g-3">
+                    <div class="col">
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item border-start border-success border-4">Eliminación de prácticas discriminatorias.</li>
+                            <li class="list-group-item border-start border-success border-4">Acceso equitativo a escuelas y servicios.</li>
+                            <li class="list-group-item border-start border-success border-4">Distribución justa de recursos y personal.</li>
+                            <li class="list-group-item border-start border-success border-4">Reducción de la brecha digital.</li>
+                            <li class="list-group-item border-start border-success border-4">Becas y apoyos económicos.</li>
+                        </ul>
+                    </div>
+                    <div class="col">
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item border-start border-success border-4">Programas de apoyo académico y nivelación.</li>
+                            <li class="list-group-item border-start border-success border-4">Inclusión de grupos vulnerables.</li>
+                            <li class="list-group-item border-start border-success border-4">Capacitación docente en educación inclusiva.</li>
+                            <li class="list-group-item border-start border-success border-4">Evaluaciones educativas justas y sin sesgos.</li>
+                            <li class="list-group-item border-start border-success border-4">Monitoreo y seguimiento de desigualdades.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="soluciones" class="container py-5">
+    <h2 class="text-center mb-5 display-5 fw-bold text-primary">Soluciones Fundamentales (Enfoque Principal)</h2>
+    <div class="row justify-content-center mb-4">
+        <div class="col-lg-8 text-center">
+             <p class="lead text-secondary">Estas soluciones son estructurales, atacan el problema desde la raíz y permiten que las demás acciones funcionen.</p>
+        </div>
+    </div>
+    <div class="row row-cols-1 row-cols-md-2 row-cols-lg-2 g-5">
+        
+        <div class="col">
+            <div class="card h-100 shadow-lg border-0 solution-card" onclick="toggleCard(this)">
+                <div class="card-body">
+                    <h3 class="card-title text-success">1. Eliminación de leyes, políticas y prácticas discriminatorias</h3>
+                    <p class="card-text short-text">Busca garantizar que ningún estudiante sea excluido por su origen, género o condición económica.</p>
+                    <p class="card-text long-text d-none">
+                        Busca garantizar que ningún estudiante sea excluido del sistema educativo por su origen social, género, discapacidad, etnia o condición económica. **La igualdad educativa comienza desde el marco legal y normativo.**
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col">
+            <div class="card h-100 shadow-lg border-0 solution-card" onclick="toggleCard(this)">
+                <div class="card-body">
+                    <h3 class="card-title text-success">2. Acceso equitativo a escuelas, servicios y recursos</h3>
+                    <p class="card-text short-text">Asegura que todas las personas puedan ingresar y permanecer en la escuela.</p>
+                    <p class="card-text long-text d-none">
+                        Asegura que todas las personas puedan ingresar y permanecer en la escuela, sin que la ubicación geográfica o la situación económica sean un obstáculo. **El acceso es la base para cualquier oportunidad educativa.**
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col">
+            <div class="card h-100 shadow-lg border-0 solution-card" onclick="toggleCard(this)">
+                <div class="card-body">
+                    <h3 class="card-title text-success">3. Distribución justa de recursos educativos</h3>
+                    <p class="card-text short-text">Implica asignar recursos de acuerdo con las necesidades reales de cada comunidad.</p>
+                    <p class="card-text long-text d-none">
+                        Implica asignar recursos de acuerdo con las necesidades reales de cada comunidad educativa, priorizando a las escuelas con mayor rezago. **La equidad no significa repartir igual, sino repartir de manera justa.**
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col">
+            <div class="card h-100 shadow-lg border-0 solution-card" onclick="toggleCard(this)">
+                <div class="card-body">
+                    <h3 class="card-title text-success">4. Reducción de la brecha digital</h3>
+                    <p class="card-text short-text">Busca evitar que la falta de tecnología limite el aprendizaje.</p>
+                    <p class="card-text long-text d-none">
+                        Busca evitar que la falta de tecnología limite el aprendizaje. **El acceso a internet y dispositivos es hoy un elemento clave para la educación y la inclusión social.**
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="calculo" class="py-5 bg-white">
+    <div class="container">
+        <h2 class="text-center mb-4 display-5 fw-bold text-primary">Aplicación del Cálculo Diferencial en las soluciones</h2>
+        <p class="text-center lead mb-5 text-secondary">
+            El cálculo diferencial permite analizar y evaluar si las soluciones educativas están funcionando de manera efectiva.
+        </p>
+
+        <div class="accordion accordion-flush" id="calculoAcordeon">
+            
+            <div class="accordion-item shadow-sm mb-3">
+                <h3 class="accordion-header">
+                    <button class="accordion-button collapsed fw-bold text-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                        1. Derivadas: Velocidad de Cambio
+                    </button>
+                </h3>
+                <div id="collapseOne" class="accordion-collapse collapse" data-bs-parent="#calculoAcordeon">
+                    <div class="accordion-body">
+                        <p><strong>Uso:</strong> Permiten medir la velocidad de cambio en indicadores educativos como la deserción escolar o el rendimiento académico.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="accordion-item shadow-sm mb-3">
+                <h3 class="accordion-header">
+                    <button class="accordion-button collapsed fw-bold text-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                        2. Límites: Escenarios Ideales
+                    </button>
+                </h3>
+                <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#calculoAcordeon">
+                    <div class="accordion-body">
+                        <p><strong>Uso:</strong> Ayudan a analizar escenarios ideales y prever los efectos de las políticas educativas a largo plazo.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="accordion-item shadow-sm mb-3">
+                <h3 class="accordion-header">
+                    <button class="accordion-button collapsed fw-bold text-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                        3. Funciones: Distribución Justa de Recursos
+                    </button>
+                </h3>
+                <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#calculoAcordeon">
+                    <div class="accordion-body">
+                        <p><strong>Uso:</strong> Se utilizan para modelar la distribución equitativa de recursos educativos según el nivel de necesidad.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="accordion-item shadow-sm mb-3">
+                <h3 class="accordion-header">
+                    <button class="accordion-button collapsed fw-bold text-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                        4. Dominio y Codominio: Alcance y Resultados
+                    </button>
+                </h3>
+                <div id="collapseFour" class="accordion-collapse collapse" data-bs-parent="#calculoAcordeon">
+                    <div class="accordion-body">
+                        <p><strong>Dominio:</strong> estudiantes, escuelas o regiones beneficiadas.</p>
+                        <p><strong>Codominio:</strong> resultados educativos esperados, como mayor permanencia escolar o mejor aprendizaje.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="accordion-item shadow-sm mb-3">
+                <h3 class="accordion-header">
+                    <button class="accordion-button collapsed fw-bold text-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                        5. Números Reales: Cuantificación del Problema
+                    </button>
+                </h3>
+                <div id="collapseFive" class="accordion-collapse collapse" data-bs-parent="#calculoAcordeon">
+                    <div class="accordion-body">
+                        <p><strong>Uso:</strong> Permiten cuantificar la desigualdad educativa mediante porcentajes, promedios e indicadores medibles.</p>
+                    </div>
+                </div>
+            </div>
+
+        </div> <div class="alert alert-primary p-4 mt-5 text-center shadow-lg">
+            <h4 class="alert-heading fw-bold">Conclusión</h4>
+            <p class="mb-3 fs-5">
+                La desigualdad educativa es un problema estructural que limita el desarrollo social. Las soluciones fundamentales buscan transformar el sistema desde su base, mientras que el cálculo diferencial permite **medir y evaluar el impacto real de dichas acciones mediante datos concretos.**
+            </p>
+        </div>
+
+    </div>
+</section>
+
+<footer class="final bg-primary text-white text-center py-4 mt-5">
+    <p class="mb-0 fs-5">La igualdad educativa es la base de una sociedad justa y próspera.</p>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+<script src="script.js"></script>
+
+</body>
+</html>
